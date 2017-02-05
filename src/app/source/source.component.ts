@@ -14,6 +14,7 @@ export class SourceComponent implements OnInit {
   sourceArray: Array<ISourceObject> = [];
   sourceObject: ISourceObject;
   sourceItem = '';
+
   constructor(private _newsFeed: NewsfeedService) { }
 
   ngOnInit() {
@@ -37,7 +38,6 @@ export class SourceComponent implements OnInit {
   };
 
   getSoucreDetail(item: ISourceObject) {
-    console.log(item);
     this.sourceObject.description = item.description;
     this.sourceObject.urlsToLogos.small = item.urlsToLogos.small;
     this.sourceObject.name = item.name;

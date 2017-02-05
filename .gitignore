@@ -4,6 +4,11 @@
 /dist
 /tmp
 
+#firebase
+/firebase.json
+/database.rules.json
+/.firebaserc
+
 # dependencies
 /node_modules
 

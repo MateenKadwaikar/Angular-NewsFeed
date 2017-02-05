@@ -1,4 +1,4 @@
-import { IArticleObject, IArticle} from './model/articlemodel';
+import { IArticleObject, IArticle } from './model/articlemodel';
 import { NewsfeedService } from './services/newsfeed-service';
 import { Component } from '@angular/core';
 
@@ -9,18 +9,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  loading: boolean ;
   articleArray: IArticleObject[] = [];
 
   constructor(private _newsFeed: NewsfeedService) { }
 
   getSourceId(sourceId) {
     this.getArticle(sourceId);
-  }
+    this.loading = true;
+    this.articleArray = [];
+  };
 
   getArticle(id: string) {
     this._newsFeed.getArticles(id).subscribe(
       (res: IArticle) => {
-        this.articleArray =  res.articles;
+        this.loading = false;
+        this.articleArray = res.articles;
       });
   }
 }
