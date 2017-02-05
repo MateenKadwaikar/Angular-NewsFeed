@@ -9,22 +9,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  loading: boolean ;
-  articleArray: IArticleObject[] = [];
-
-  constructor(private _newsFeed: NewsfeedService) { }
-
-  getSourceId(sourceId) {
-    this.getArticle(sourceId);
-    this.loading = true;
-    this.articleArray = [];
-  };
-
-  getArticle(id: string) {
-    this._newsFeed.getArticles(id).subscribe(
-      (res: IArticle) => {
-        this.loading = false;
-        this.articleArray = res.articles;
-      });
-  }
 }

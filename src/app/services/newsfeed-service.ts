@@ -10,7 +10,8 @@ export class NewsfeedService {
   private url = 'https://newsapi.org/v1/';
   private apiKey = 'a666cc2dbbc449e986b6f0ae7d7955fe';
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http) {}
+
   private headers(): Headers {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
