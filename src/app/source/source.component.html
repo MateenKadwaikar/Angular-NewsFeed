@@ -1,0 +1,20 @@
+<div class="sourceselection">
+    <div>
+        <div class="jumbotron">
+
+            <h2><span class="glyphicon glyphicon-list-alt"></span>&nbsp;News List</h2>
+            <h4>Select News Source</h4>
+            <select class="form-control" [(ngModel)]="sourceItem" (change)="getSoucreDetail(sourceItem)" name='source'>
+                 <option [value]="sourceItem" [disabled]= "true">Select Source</option>
+                <option *ngFor="let item of sourceArray" [ngValue]="item">
+                    {{item.name}}
+                </option>
+                </select>
+
+            <div>
+                <h6>{{sourceObject?.description}}</h6>
+                <a class="btn btn-primary" target="_blank" [class.disabled]="sourceObject?.url === undefined" [href]="sourceObject?.url">Go To  {{sourceObject?.name}}  Website</a>
+            </div>
+        </div>
+    </div>
+</div>

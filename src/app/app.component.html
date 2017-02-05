@@ -1,0 +1,20 @@
+<app-source (sourceId)='getSourceId($event)'></app-source>
+<div class="newslist">
+    <div class="container">
+        <ul class="media-list">
+            <li class="media" *ngFor="let item of articleArray">
+                <div class="media-left">
+                    <a target="_blank">
+                        <img class="media-object" src="{{item.urlToImage}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <a target="_blank" [href]="item.url">{{item.title}}</a></h4>
+                    <h5 *ngIf="item.author !== null"> <i>by {{item.author}}</i></h5>
+                    <p>{{item.description}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

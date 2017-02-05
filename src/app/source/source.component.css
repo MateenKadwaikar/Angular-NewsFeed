@@ -1,0 +1,8 @@
+a.disabled {
+    color: white;
+    cursor: not-allowed
+}
+
+.sourceselection {
+    padding: 12px;
+}
