@@ -1,27 +1,24 @@
-import { NewsfeedService } from './services/newsfeed-service';
-import { SourceComponent } from './source/source.component';
-import { ArticlesComponent } from './articles/articles.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
 
+import * as md from './index';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SourceComponent,
-    ArticlesComponent
+    md.AppComponent,
+    md.SourceComponent,
+    md.ArticlesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
   ],
-  providers: [NewsfeedService],
-  bootstrap: [AppComponent]
+  providers: [md.NewsfeedService],
+  bootstrap: [md.AppComponent]
 })
 export class AppModule { }

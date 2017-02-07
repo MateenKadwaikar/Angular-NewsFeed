@@ -20,7 +20,7 @@ export class NewsfeedService {
   }
 
   getSources() {
-    return this._http.get(`${this.url}/sources?language=en`, {
+    return this._http.get(`${this.url}sources`, {
       headers: this.headers()
     })
       .map(this.extractData)
