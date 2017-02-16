@@ -8,9 +8,9 @@ import 'rxjs/add/operator/map';
 export class NewsfeedService {
 
   private url = 'https://newsapi.org/v1/';
-  private apiKey = 'a666cc2dbbc449e986b6f0ae7d7955fe';
+  private apiKey = '9fe2f30bf58a4a29966054eb5a58ccc9';
 
-  constructor(private _http: Http) {}
+  constructor(private _http: Http) { }
 
   private headers(): Headers {
     const headers = new Headers();
@@ -19,7 +19,7 @@ export class NewsfeedService {
     return headers;
   }
 
-  getSources() {
+  getSources(): Observable<any> {
     return this._http.get(`${this.url}sources`, {
       headers: this.headers()
     })
@@ -27,7 +27,7 @@ export class NewsfeedService {
       .catch(this.handleErrors);
   };
 
-  getArticles(sourceId) {
+  getArticles(sourceId): Observable<any> {
     const search = new URLSearchParams();
     search.set('source', sourceId);
     search.set('apiKey', this.apiKey);

@@ -2,6 +2,7 @@ import { IArticleObject, IArticle } from '../model/articlemodel';
 import { NewsfeedService } from '../services/newsfeed-service';
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-articles',
   templateUrl: './articles.component.html',
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class ArticlesComponent {
 
-  loading: boolean ;
+  loading: boolean;
   articleArray: IArticleObject[] = [];
 
   constructor(private _newsFeed: NewsfeedService) { }

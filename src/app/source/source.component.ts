@@ -1,7 +1,7 @@
 import { ISource, ISourceObject } from './../model/sourcemodel';
 import { NewsfeedService } from './../services/newsfeed-service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-declare var window: any;
+declare var _: any;
 
 @Component({
   selector: 'app-source',
@@ -18,6 +18,7 @@ export class SourceComponent implements OnInit {
   constructor(private _newsFeed: NewsfeedService) { }
 
   ngOnInit() {
+    console.log(_);
     this.getSource();
     this.source();
   };

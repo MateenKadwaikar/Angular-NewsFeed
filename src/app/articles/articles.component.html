@@ -15,7 +15,7 @@
                 <div class="media-body">
                     <h4 class="media-heading">
                         <a target="_blank" [href]="item.url">{{item.title}}</a></h4>
-                    <h5 *ngIf="item.author !== null"> <i>by {{item.author}}</i></h5>
+                    <h5 *ngIf="item?.author !== null"> <i>by {{item.author}}</i></h5>
                     <p>{{item.description}}</p>
                 </div>
             </li>
