@@ -14,14 +14,14 @@ export class NewsfeedService {
 
   private headers(): Headers {
     const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    headers.append('content-type', 'application/json');
     headers.append('Accept', 'application/json');
     return headers;
   }
 
   getSources(): Observable<any> {
     return this._http.get(`${this.url}sources`, {
-      headers: this.headers()
+      // headers: this.headers()
     })
       .map(this.extractData)
       .catch(this.handleErrors);
@@ -33,13 +33,14 @@ export class NewsfeedService {
     search.set('apiKey', this.apiKey);
     return this._http.get(`${this.url}articles?`, {
       search,
-      headers: this.headers()
+      //headers: this.headers()
     })
       .map(this.extractData)
       .catch(this.handleErrors);
   }
 
   private extractData(res: Response) {
+    console.log(res);
     return res.json();
   }
 
